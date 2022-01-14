@@ -1,40 +1,12 @@
 class UsersController < ApplicationController
-    def index
-        @users = User.all
+    def new  
     end
-    
-    def new
+
+    def create 
         @user = User.new
-    end
+        @user.username = params[:username]
+        @user.save
 
-    def create
-        @user = User.new
-        if @user.valid?
-            @user.save
-            session[:user_id] = @user.id
-            redirect_to user_path(@user)
-        else
-            redirect_to '/'
-        end
-    end
-
-    def show
-        if User.find_by(id:params[:id]) && session[:user_id]
-            @user = User.find_by(id:params[:id])
-            render :show
-        else
-            redirect_to '/'
-        end
-    end
-
-    def destroy
-        session.delete :username
-        redirect_to '/'
-    end
-
-    private
-
-    def user_params
-        params.require(:user).permit(:username, :password)
+        redirect_to "/login"
     end
 end
