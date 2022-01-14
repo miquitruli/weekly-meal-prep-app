@@ -1,10 +1,12 @@
-<h1> NEW USER </h1>
+<h1> Welcome, create a new user</h1>
 
+<%= form_for @user do |user|%>
+    <p><%= user.label :username %>: <%= user.text_field :username %> </p>
 
+    <p><%= user.label :password %>: <%= user.password_field :password %> </p>
 
-<%= form_tag("/users") do%>
-    <p><%= label_tag "Username:" %>
-    <%= text_field_tag "username" %></p>
-    
-    <%=submit_tag "Register"%>
+    <p><%= user.submit "Create User" %>
 <%end%>
+
+
+

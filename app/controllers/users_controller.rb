@@ -27,6 +27,11 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        session.delete :username
+        redirect_to '/'
+    end
+
     private
 
     def user_params
