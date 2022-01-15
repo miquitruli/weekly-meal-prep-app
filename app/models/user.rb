@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-    #has_secure_password
+    has_secure_password
 
-    # has_many :weeks
-    # has_many :recipes
-    # has_many :shopping_lists, through: :weeks
+    has_many :weeks
+    has_many :recipes
+
+    validates :email, :name, presence: true
+    validates :email, uniqueness: true
 end

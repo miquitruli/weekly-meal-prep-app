@@ -1,6 +1,5 @@
 class Ingredient < ApplicationRecord
-    # has_many :ingredients_recipes
-    # has_many :recipes, through: :ingredients_recipes
+    belongs_to :recipe
 
-    # validates :name, presence: true
+    validates :name, :quantity, :measurement, presence: true
 end
