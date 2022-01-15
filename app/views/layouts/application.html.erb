@@ -15,8 +15,9 @@
     
         <% if logged_in? %>
                 <nav>
-                  You are logged in as: <%= current_user.name %> | 
-                  <%= link_to "Log Out", signout_path %> 
+                  You are logged in as: <%= link_to current_user.name, user_path(current_user) %> 
+                  <p><%= link_to "Log Out", signout_path %> | 
+                  <%= link_to "Dashboard" , dashboards_path%></p>
                 </nav>    
         <% else %>
                 <p><%= link_to "Register Now", register_path %> | 

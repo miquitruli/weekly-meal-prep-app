@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'auth/google_oauth2/callback', to: 'sessions#google_oauth'
   
-  # resources :users, only: [:new, :create, :show]
+  resources :users
   # resources :weeks
   # resources :recipes
   # resources :shopping_lists

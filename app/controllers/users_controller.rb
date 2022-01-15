@@ -13,6 +13,26 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        if User.find_by(id: params[:id]) && session[:user_id]
+            @user = User.find_by(id: params[:id])
+            render :show
+        else
+            redirect_to dashboards_path
+        end
+    end
+
+    def edit
+        @user = User.find(params[:id])
+    end
+
+    def update
+        user = User.find(params[:id])
+        user.update(user_params)
+
+        redirect_to dashboards_path
+    end
+
     private 
 
     def user_params
