@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get '/login', to: 'sessions#new'
-  post '/signin', to: 'sessions#create'
-  # get '/signout', to: 'sessions#destroy', via: 'delete' 
+  post '/sessions', to: 'sessions#create'
+
+  root 'application#welcome'
+  get '/signout', to: 'sessions#destroy', via: 'delete' 
   
 
   # resources :users, only: [:new, :create, :show]
