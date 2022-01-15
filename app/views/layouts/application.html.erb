@@ -13,9 +13,9 @@
   <body>
     <%= yield %>
     
-        <% if session[:current_user_id] %>
+        <% if logged_in? %>
                 <nav>
-                  You are logged in as: <%= @current_user.username %> | 
+                  You are logged in as: <%= current_user.name %> | 
                   <%= link_to "Log Out", signout_path %> 
                 </nav>    
         <% else %>

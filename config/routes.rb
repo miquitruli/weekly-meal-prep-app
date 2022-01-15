@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   root 'application#welcome'
   get '/signout', to: 'sessions#destroy', via: 'delete' 
-  
 
+  resources :dashboards, only: [:index]
+
+  get 'auth/google_oauth2/callback', to: 'sessions#google_oauth'
+  
   # resources :users, only: [:new, :create, :show]
   # resources :weeks
   # resources :recipes
