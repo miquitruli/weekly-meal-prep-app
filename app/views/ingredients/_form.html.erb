@@ -1,0 +1,16 @@
+<%= form_with(model: ingredient, url: recipe_ingredients_path(ingredient.recipe)) do |f|%>
+    <%if ingredient.errors.any?%>
+        <p class="alert"><%= ingredient.errors.full_messages.to_sentence%></p>
+    <%end%>
+    
+    <p><%= f.label :name %>: 
+    <%= f.text_field :name%>
+
+    <%= f.label :quantity %>: 
+    <%= f.number_field :quantity, min: 0%>
+
+    <%= f.label :measurement %>: 
+    <%= f.text_field :measurement%>
+
+    <p><%= f.submit %></p>
+<%end%>

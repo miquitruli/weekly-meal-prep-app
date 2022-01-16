@@ -5,10 +5,12 @@
     
     <p><%= f.label :email%>: 
     <%= f.email_field :email%></p>
-
-    <p><%= f.label :password %>: 
-    <%= f.password_field :password%></p>
-
+    
+    <%if !user.persisted?%>
+        <p><%= f.label :password %>: 
+        <%= f.password_field :password%></p>
+    <%end%>
+    
     <p><%= f.label :profile_image, "Image: " %>
     <%= f.text_field :profile_image%></p>
 

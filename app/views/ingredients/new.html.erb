@@ -1,0 +1,6 @@
+<%=render 'form', ingredient: @ingredient%>
+
+<% @ingredient.recipe.ingredients.each do |i|%>
+    <%= i.name%> : <%= i.quantity%> <%= i.measurement%> | 
+    <%= link_to "delete", recipe_ingredient_path(i.recipe, i), method: :delete%>
+<%end%>

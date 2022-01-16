@@ -1,0 +1,14 @@
+<%= form_with(model: recipe) do |f|%>
+
+<%if recipe.errors.any?%>
+        <p class="alert"><%= recipe.errors.full_messages.to_sentence%></p>
+<%end%>
+
+<p><%= f.label :name %>: 
+<%= f.text_field :name%></p>
+
+<p><%= f.label :description %>: 
+<%= f.text_area :description, cols: 40, rows: 5%></p>
+
+<p><%= f.submit %></p>
+<%end%>

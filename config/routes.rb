@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get 'auth/google_oauth2/callback', to: 'sessions#google_oauth'
   
   resources :users
-  # resources :weeks
-  # resources :recipes
-  # resources :shopping_lists
+  resources :weeks
+  
+  resources :recipes do
+    resources :ingredients
+  end  
 end

@@ -1,8 +1,26 @@
 
 <img src="<%=current_user.profile_image%>"/>  <h1>Dashboard of: <%=current_user.name%></h1>
 
-<p><h3>You are on Week (automate week number)</h3></p>
+<p><h3>You are on Week <%=Week.current_week%></h3></p>
 
+<h2> Your Recipes for this week </h2>
+
+<% if @week%>
+    <%@week.recipes.each do |recipe|%>
+        <%=recipe.name%>
+    <%end%>
+<%end%>
+
+<%=link_to "Your Recipe List", recipes_path%>
+
+<h1> Shopping list for this Week</h1>
+
+<% if @week%>
+    <%ingredients=Ingredient.where(recipe: @week.recipes)%>
+        <%ingredients.group(:name).sum(:quantity).each do |name, qty|%>
+            <li><%=qty%> <%=name%></li>
+        <%end%>
+    <%end%>
 
 
 

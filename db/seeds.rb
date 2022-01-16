@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+week_1 = Week.create(name: "week 1", user_id: 1)
+
+recipe_1 = Recipe.create(name: "apple pie", description: "djkfg,sfjkghklajdfg,dfhk" , user_id: 1)

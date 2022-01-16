@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
     has_many :ingredients
 
     belongs_to :user
-    belongs_to :week
 
     validates :name, :description, presence: true
+    validates_uniqueness_of :name, scope: :user_id
 end

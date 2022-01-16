@@ -1,0 +1,15 @@
+<h1>Add from Existing Recipes:</h1>
+
+<%=form_with(model: @week) do |f|%>
+    
+    <% @recipes.each do |recipe|%>
+        <p><%= f.check_box recipe.id%>
+        <%=link_to recipe.name, recipe_path(recipe) %></p>
+    <%end%>
+    <%= f.submit "Add Recipe to Week"%>
+<%end%>
+
+<h1>or Create New Recipe:</h1>
+
+<%= link_to "Create New Recipe", new_recipe_path %>
+
