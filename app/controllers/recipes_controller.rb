@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
     def index
-        @recipes = Recipe.all
+        @recipes = current_user.recipes.all
         @week = Week.new
     end
 
@@ -32,6 +32,12 @@ class RecipesController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def destroy
+        @recipe = Recipe.find_by(params[:recipe_id])
+        @recipe.destroy
+        redirect_to recipes_path
     end
 
 

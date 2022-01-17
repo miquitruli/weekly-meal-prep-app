@@ -6,8 +6,9 @@
 
 <p>Name: <%=current_user.name%></p>
 <p>Email: <%=current_user.email%></p>
-<p>Currently on: (add week number)</p>
-<p>Total Recipes: (add total recipes)</p>
+<p>Currently on: Week <%=Week.current_week%></p>
+
+<p>Total Recipes: <%=Recipe.all.count%></p>
 
 <p><%= link_to "Edit User Info" , edit_user_path(current_user) %></p>
 <br><br>

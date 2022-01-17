@@ -1,6 +1,7 @@
 class Week < ApplicationRecord
     belongs_to :user
     has_many :recipe_weeks
+    has_many :week_ingredients
 
     has_many :recipes, through: :recipe_weeks
 

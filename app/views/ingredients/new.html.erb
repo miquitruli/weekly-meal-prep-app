@@ -1,6 +1,11 @@
+<h2> Add Ingredient to <%=@ingredient.recipe.name%></h2>
+
 <%=render 'form', ingredient: @ingredient%>
 
+<h2>Ingredients:</h2>
+
 <% @ingredient.recipe.ingredients.each do |i|%>
-    <%= i.name%> : <%= i.quantity%> <%= i.measurement%> | 
-    <%= link_to "delete", recipe_ingredient_path(i.recipe, i), method: :delete%>
+    <li><%= i.name%> : <%= i.quantity%> <%= i.measurement%> | 
+    <%= link_to "delete", recipe_ingredient_path(i.recipe, i), method: :delete%></li>
 <%end%>
+<br>

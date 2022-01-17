@@ -6,22 +6,36 @@
 <h2> Your Recipes for this week </h2>
 
 <% if @week%>
-    <%@week.recipes.each do |recipe|%>
-        <%=recipe.name%>
+    <%@week.recipes.group(:name).each do |recipe|%>
+        <li><%=recipe.name%> | <%=link_to "Edit", edit_recipe_path(recipe)%> | <%=link_to "Ingredients", recipe_ingredients_path(recipe)%></li> 
     <%end%>
 <%end%>
 
-<%=link_to "Your Recipe List", recipes_path%>
+<p><%=link_to "Your Recipe List", recipes_path%></p>
 
 <h1> Shopping list for this Week</h1>
 
 <% if @week%>
-    <%ingredients=Ingredient.where(recipe: @week.recipes)%>
-        <%ingredients.group(:name).sum(:quantity).each do |name, qty|%>
-            <li><%=qty%> <%=name%></li>
+    <%= form_with(model: @week) do |f|%>
+
+        <% @week.week_ingredients.each do |week_ingredient|%>
+
+            <p>
+                <%unless week_ingredient.checked%>
+                    <%= f.check_box week_ingredient.id, {checked: week_ingredient.checked}%>
+                <%end%>
+                <%=week_ingredient.ingredient_quantity %> <%=week_ingredient.ingredient_name %>
+            </p>
         <%end%>
+        <%= f.submit "clear"%>
     <%end%>
+<%end%>
+
+        
+        
+    
 
 
 
 <br><br>
+

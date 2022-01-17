@@ -1,0 +1,8 @@
+<h1> All Ingredients for <%=@recipe.name%> </h1>
+
+<%@ingredients.each do |ingredient|%>
+    <li><%=ingredient.name%></li>
+<%end%>
+
+<p><%= link_to "Edit Ingredients", new_recipe_ingredient_path(@recipe)%></p>
+<br>

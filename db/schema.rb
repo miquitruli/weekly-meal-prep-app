@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_16_151448) do
+ActiveRecord::Schema.define(version: 2022_01_17_133102) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2022_01_16_151448) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "profile_image"
+  end
+
+  create_table "week_ingredients", force: :cascade do |t|
+    t.integer "week_id"
+    t.string "ingredient_name"
+    t.integer "ingredient_quantity", default: 0
+    t.boolean "checked", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "weeks", force: :cascade do |t|
