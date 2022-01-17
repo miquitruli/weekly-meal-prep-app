@@ -2,17 +2,19 @@
 <img src="<%=current_user.profile_image%>"/>  <h1>Dashboard of: <%=current_user.name%></h1>
 
 <p><h2 class="blue">You are on Week <%=Week.current_week%></h2></p>
-
-<h2> Your Recipes for this week </h2>
+<br>
+<h1> Your Recipes for this week </h1>
 
 <% if @week%>
-    <%@week.recipes.group(:name).each do |recipe|%>
-        <p><li><%=recipe.name%> | <%=link_to "Edit", edit_recipe_path(recipe)%> | <%=link_to "Ingredients", recipe_ingredients_path(recipe)%> | <%#=link_to "Delete", week_recipes_path(recipe),  method: :delete%></li></p>
+    <%@week.recipe_weeks.each do |recipe_week|%>
+        <p><li><%=recipe_week.recipe.name%> | <%=link_to "Edit", edit_recipe_path(recipe_week.recipe)%> | <%=link_to "Ingredients", recipe_ingredients_path(recipe_week.recipe)%> |
+         <%= link_to "Delete", recipe_week_path(recipe_week),  method: :delete %></li></p>
     <%end%>
 <%end%>
 
 <p><%=link_to "Your Recipe List", recipes_path%></p>
 
+<br>
 <h1> Shopping list for this Week</h1>
 
 <% if @week%>

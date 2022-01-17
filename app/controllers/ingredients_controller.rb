@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
     def index
         @recipe = Recipe.find(params[:recipe_id])
-        @ingredients = @recipe.ingredients.order_by_name
+        @ingredients = @recipe.ingredients
     end
     
     def new
@@ -23,6 +23,11 @@ class IngredientsController < ApplicationController
         ingredient= recipe.ingredients.find(params[:id])
         ingredient.destroy
         redirect_to new_recipe_ingredient_path(recipe)
+    end
+
+    def ordered_ingredients
+        @recipe = Recipe.find(params[:recipe_id])
+        @ingredients = @recipe.ingredients.order_by_name
     end
         
 

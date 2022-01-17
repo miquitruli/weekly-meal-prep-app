@@ -21,6 +21,7 @@ Specs:
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
         - Ingredient
             - scope :order_by_name, -> { order(:name) }
+        - ordered ingredients
 - [x] Include signup (how e.g. Devise)
     - Register included
 - [x] Include login (how e.g. Devise)
@@ -40,4 +41,5 @@ Confirm:
 - [x] The application is pretty DRY
 - [x] Limited logic in controllers
 - [x] Views use helper methods if appropriate
+    ex: logged_in? and current_user
 - [x] Views use partials if appropriate
