@@ -1,25 +1,33 @@
+# weekly-meal-prep-app
+
+Welcome to my Weekly Meal Prep App. I have created this app with the hopes of making everyone's life a little easier when it comes to meal planning. Once you log in, we have created a dashboard that includes everything you need to plan your week. Here you can add or create new recipes that can be used all year long. Once you add your recipes, we automatically create a shopping list for you that contains everything you need to buy for the week! We hope this app can facilitate the little time you have for this tedious part of our lives, by having everything under one place!
+
+
+## Installation
+
+$ gem install weekly-meal-prep-app
+
+## Usage
+
+$ weekly-meal-prep-app
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/gvl_romance. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/weekly-meal-prep-app/blob/master/CODE_OF_CONDUCT.md).
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the GvlRomance project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/gvl_romance/blob/master/CODE_OF_CONDUCT.md).
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# weekly-meal-prep-app
