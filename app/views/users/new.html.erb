@@ -2,5 +2,9 @@
 
 <%=render 'form', user: @user%>
 
+<%=link_to 'Register with Google', '/auth/google_oauth2', method: :post%>
+
+<h2> Already an User? </h2>
+
 <%=link_to 'Sign-in with Google', '/auth/google_oauth2', method: :post%>
 

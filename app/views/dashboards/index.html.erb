@@ -1,13 +1,13 @@
 
 <img src="<%=current_user.profile_image%>"/>  <h1>Dashboard of: <%=current_user.name%></h1>
 
-<p><h3>You are on Week <%=Week.current_week%></h3></p>
+<p><h2 class="blue">You are on Week <%=Week.current_week%></h2></p>
 
 <h2> Your Recipes for this week </h2>
 
 <% if @week%>
     <%@week.recipes.group(:name).each do |recipe|%>
-        <li><%=recipe.name%> | <%=link_to "Edit", edit_recipe_path(recipe)%> | <%=link_to "Ingredients", recipe_ingredients_path(recipe)%></li> 
+        <p><li><%=recipe.name%> | <%=link_to "Edit", edit_recipe_path(recipe)%> | <%=link_to "Ingredients", recipe_ingredients_path(recipe)%> | <%#=link_to "Delete", week_recipes_path(recipe),  method: :delete%></li></p>
     <%end%>
 <%end%>
 

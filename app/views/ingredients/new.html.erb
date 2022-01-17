@@ -5,7 +5,14 @@
 <h2>Ingredients:</h2>
 
 <% @ingredient.recipe.ingredients.each do |i|%>
-    <li><%= i.name%> : <%= i.quantity%> <%= i.measurement%> | 
-    <%= link_to "delete", recipe_ingredient_path(i.recipe, i), method: :delete%></li>
+    <%if i.errors.any?%>
+        <p class="alert"><%= i.errors.full_messages.to_sentence%></p>
+    <%else%>
+        <li><%= i.name%> : <%= i.quantity%> <%= i.measurement%> | 
+        <%= link_to "delete", recipe_ingredient_path(i.recipe, i), method: :delete%></li>
+    <%end%>
 <%end%>
 <br>
+
+<%=link_to "My Recipes", recipes_path %>
+<br><br>
